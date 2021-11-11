@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch');
+const cors = require('cors');
 require('dotenv').config();
 const API_KEY = process.env.API_KEY;
 const weatherKey = API_KEY;
+
+app.use(cors());
 
 // current weather info.
 app.get('/weather/current/:cityName', async (req, res) => {
@@ -14,6 +17,7 @@ app.get('/weather/current/:cityName', async (req, res) => {
 		);
 		const data = await fetchRequest.json();
 		res.json(data);
+		res.setHeader('Access-Control-Allow-Origin', 'https://boring-swirles-9dc2b1.netlify.app');
 	} catch {
 		err => console.log(err);
 	}
