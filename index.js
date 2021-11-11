@@ -5,10 +5,6 @@ require('dotenv').config();
 const API_KEY = process.env.API_KEY;
 const weatherKey = API_KEY;
 
-app.get('/', (req, res) => {
-	res.send('hello world');
-});
-
 // current weather info.
 app.get('/weather/current/:cityName', async (req, res) => {
 	try {
