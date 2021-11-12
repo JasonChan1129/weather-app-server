@@ -53,6 +53,6 @@ app.get('/weather/forecast/5days/:lat/:lng', async (req, res) => {
 	}
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 5500, () => {
 	console.log('server is listening on port 5500...');
 });
