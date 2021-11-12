@@ -6,7 +6,7 @@ require('dotenv').config();
 const API_KEY = process.env.API_KEY;
 const weatherKey = API_KEY;
 
-app.use(cors({ origin: 'https://jasons-weather.netlify.app/' }));
+app.use(cors({ origin: 'https://jasons-weather.netlify.app' }));
 
 // current weather info.
 app.get('/weather/current/:cityName', async (req, res) => {
