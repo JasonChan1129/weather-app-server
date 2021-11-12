@@ -9,7 +9,7 @@ const weatherKey = API_KEY;
 app.use(cors());
 
 // current weather info.
-app.get('/weather/:cityName', async (req, res) => {
+app.get('/weather/current/:cityName', async (req, res) => {
 	try {
 		const { cityName } = req.params;
 		const fetchRequest = await fetch(
